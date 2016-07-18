@@ -1,3 +1,4 @@
+#.git/conf url=ssh://git@github.com/zhangdongyue/Front-End-Web-Develop-memo.git
 #替代js alert，弹出panel后，指定时间退出。
 #html
 <div id="alert_panel" align="center"></div>
