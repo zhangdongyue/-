@@ -1,0 +1,33 @@
+#替代js alert，弹出panel后，指定时间退出。
+#html
+<div id="alert_panel" align="center"></div>
+
+#js
+function alert_panel(msg) 
+{
+    document.getElementById("alert_panel").innerHTML = "<b>"+msg+"&nbsp;!</b>";
+    if(!$('#alert_panel').is(':visible')){ 
+        $('#alert_panel').css({display:'block', top:'-100px'}).animate({top: '+100'}, 500, function(){ 
+            setTimeout(out, 300); 
+        }); 
+    }   
+}
+
+function out() 
+{
+    $('#alert_panel').animate({top:'0'}, 300, function(){
+        $(this).css({display:'none', top:'-100px'}); 
+   }); 
+}
+
+#css
+#alert_panel {
+    position:absolute;
+    width:250px;
+    padding:8px;
+    background:#1ABC9C;
+    border:2px solid #16A085;
+    left:40%;
+    z-index:9999;
+    display:none;
+}
